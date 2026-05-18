@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <nav class="site-nav">
+          <div class="site-brand">
+            <div class="logo">SM</div>
+            <div class="brand-text">
+              <strong>Social Media</strong>
+              <small>API demo</small>
+            </div>
+          </div>
+          <div class="nav-actions">
+            <input id="search-input" class="search" placeholder="Search posts or users" />
+            <button id="theme-toggle" class="secondary">Theme</button>
+          </div>
+        </nav>
+
+        <div>
+          <p class="eyebrow">Social Media API</p>
+          <h1>Share updates with your community.</h1>
+          <p class="hero-copy">
+            Login, post updates, and browse your timeline from a clean frontend
+            experience.
+          </p>
+        </div>
+        <div class="hero-graphic"></div>
+      </header>
+
+      <main class="layout">
+        <section class="panel auth-panel" id="auth-panel">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">Welcome back</p>
+              <h2 id="auth-title">Login to continue</h2>
+            </div>
+          </div>
+
+          <form id="login-form" class="form-grid">
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <button type="submit">Login</button>
+          </form>
+        </section>
+
+        <section class="panel hidden timeline-panel" id="post-panel">
+          <div class="panel-title row-between">
+            <div>
+              <p class="eyebrow">Timeline</p>
+              <h2>Your feed</h2>
+            </div>
+            <button id="logout-button" class="secondary">Logout</button>
+          </div>
+          <div class="profile-summary" id="profile-summary"></div>
+
+          <form id="post-form" class="form-grid">
+            <label>
+              Share a thought
+              <textarea
+                name="desc"
+                rows="4"
+                placeholder="What’s happening?"
+                required
+              ></textarea>
+            </label>
+            <label>
+              Image URL (optional)
+              <input type="text" name="img" placeholder="https://..." />
+            </label>
+            <button type="submit">Post update</button>
+          </form>
+
+          <div id="posts-container" class="posts-grid"></div>
+        </section>
+      </main>
+
+      <div id="message" class="message hidden"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
